@@ -10,7 +10,7 @@
 
 
 int main (int argc, char* argv[]) {
-
+    int state = 0;
     GameBoard gb = {};
     AbstractPlayer* p = new Player{0,&gb};
     gb.attachPlayer(p);
@@ -83,9 +83,11 @@ int main (int argc, char* argv[]) {
         std::cerr << "Invalid command line." << std::endl;
         return 0;
     }}
-    catch(...){}
+    catch(int a){
+        state = a;
+    }
 
-    while (!(std::cin.eof())) {
+    while (!(std::cin.eof()) && state != -1) {
         std::cout << "Would you like play again?" << std::endl;
         std::string response;
         if(!(std::cin >> response)){
