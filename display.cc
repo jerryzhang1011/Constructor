@@ -48,6 +48,9 @@ int Display::readInt(){
         if(iss>>i){
             return i;
         }
+        if(cin.eof()){
+            break;
+        }
         invalid();
     }
 

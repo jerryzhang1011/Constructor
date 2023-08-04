@@ -171,7 +171,6 @@ void GameBoard::processDice(int index){
         notifyPlayer(-1,1,0);
         notifyPlayer(index,-1,-1);
         processGeese(input,index,index_to_name(index));
-        notifyPlayer(index,100+input,1);
     }
     else{
         player_get_resource();
@@ -379,9 +378,9 @@ void GameBoard::players_choose_start_index() {
         try {
             this->build_residence(i, in, true);
             notifyPlayer(i,6,in);
-            /*notifyPlayer(i,-1,-1);
+            notifyPlayer(i,-1,-1);
             int in = this->getInput();
-            this->constructRoad(i,in);*/
+            this->constructRoad(i,in);
         }
         catch(const char* a) {
             --i;
@@ -395,9 +394,9 @@ void GameBoard::players_choose_start_index() {
         try {
             this->build_residence(i, in, true);
             notifyPlayer(i,6,in);
-            /*notifyPlayer(i,-1,-1);
+            notifyPlayer(i,-1,-1);
             int in = this->getInput();
-            this->constructRoad(i,in);*/
+            this->constructRoad(i,in);
         }
         catch(const char* a) {
             --i;

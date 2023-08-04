@@ -344,7 +344,7 @@ int Player::notify(int target, int eventPara1, int eventPara2){
 
 Player::Player(int index,GameBoard *gb): gb {gb}, display{new Display()}, index {index}{
     for (int i = 0; i < RESOURCETYPE; ++i) {
-        resource[i] = 5;
+        resource[i] = 0;
     }
     score = 0;
 }

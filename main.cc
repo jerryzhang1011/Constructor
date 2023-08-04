@@ -42,7 +42,7 @@ int main (int argc, char* argv[]) {
             continue;
         }
     }
-
+    try{
     if (argument == "-random-board") {
         gb.initialize(-1);
         gb.display_board();
@@ -82,12 +82,15 @@ int main (int argc, char* argv[]) {
     } else {
         std::cerr << "Invalid command line." << std::endl;
         return 0;
-    }
+    }}
+    catch(...){}
 
-    while (1) {
+    while (!(std::cin.eof())) {
         std::cout << "Would you like play again?" << std::endl;
         std::string response;
-        std::cin >> response;
+        if(!(std::cin >> response)){
+            break;
+        }
         if (response == "yes") {
             gb.initialize(-1);
             gb.display_board();
